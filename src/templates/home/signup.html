@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Registro</h1>
+
+	{% if errors %}
+		{{errors}}
+	{% endif %}
+
+	<form action="{% url 'home_app:signup' %}" method="POST">
+		{% csrf_token %}
+		<input type="text" name="username" placeholder="Nombre de Usuario">
+		<br>
+		<input type="text" name="first_name" placeholder="Nobmres">
+		<br>
+		<input type="text" name="last_name" placeholder="Apellidos">
+		<br>
+		<input type="password" name="password" placeholder="Clave">
+		<br>
+		<input type="submit">
+	</form>
+
+	<br>
+
+	<a href="{% url 'home_app:home' %}">Volver</a>
+
+</body>
+</html>
